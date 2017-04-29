@@ -1,0 +1,10 @@
+virginia, south africa 
+afrikaans
+tswana 
+9
+academic
+usa
+0.5 years 
+{'other language(s)': ' tswana ', 'age': '27', 'native language': ' afrikaans\n(afr)', 'birth place': ' virginia, south africa (map)', 'age of english onset': ' 9', 'sex': ' female', 'english learning method': ' academic', 'english residence': ' usa', 'length of english residence': ' 0.5 years '}
+{'providedLocation': {'location': ' virginia, south africa (map)'}, 'locations': [{'displayLatLng': {'lat': 39.390897, 'lng': -99.066067}, 'adminArea6Type': 'Neighborhood', 'type': 's', 'linkId': '282934758', 'adminArea4Type': 'County', 'geocodeQuality': 'COUNTRY', 'geocodeQualityCode': 'A1XAX', 'adminArea1Type': 'Country', 'adminArea3': '', 'adminArea6': '', 'adminArea5': '', 'adminArea1': 'US', 'dragPoint': False, 'postalCode': '', 'adminArea5Type': 'City', 'adminArea4': '', 'sideOfStreet': 'N', 'adminArea3Type': 'State', 'street': '', 'unknownInput': '', 'latLng': {'lat': 39.390897, 'lng': -99.066067}}]}
+

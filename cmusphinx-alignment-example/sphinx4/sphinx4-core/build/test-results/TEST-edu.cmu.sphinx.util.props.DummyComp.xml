@@ -1,0 +1,9 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="edu.cmu.sphinx.util.props.DummyComp" tests="3" failures="0" errors="0" timestamp="2017-04-30T13:45:47" hostname="DESKTOP-UVL8R14" time="0.011">
+  <properties/>
+  <testcase name="testCustomizedDefaultInstance" classname="edu.cmu.sphinx.util.props.DummyComp" time="0.001"/>
+  <testcase name="testGetDefaultInstance" classname="edu.cmu.sphinx.util.props.DummyComp" time="0.002"/>
+  <testcase name="testUseXmlConfig" classname="edu.cmu.sphinx.util.props.DummyComp" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

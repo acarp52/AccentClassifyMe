@@ -1,0 +1,10 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="edu.cmu.sphinx.decoder.scorer.ScorerTests" tests="2" failures="0" errors="0" timestamp="2017-04-30T13:46:21" hostname="DESKTOP-UVL8R14" time="1.033">
+  <properties/>
+  <testcase name="testThreadedScorerDeallocation" classname="edu.cmu.sphinx.decoder.scorer.ScorerTests" time="1.014"/>
+  <testcase name="waitUntilSpeechStart" classname="edu.cmu.sphinx.decoder.scorer.ScorerTests" time="0.019"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[testing: SimpleAcousticScorer
+testing: ThreadedAcousticScorer
+]]></system-err>
+</testsuite>

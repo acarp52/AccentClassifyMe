@@ -1,0 +1,28 @@
+Invoking Maven for the goals: [org.apache.maven.plugins:maven-javadoc-plugin:2.9.1:javadoc] with no properties
+
+M2_HOME=/usr/share/maven
+MAVEN_OPTS=null
+JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre/..
+JAVA_OPTS=null
+
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Sphinx4 models 5prealpha-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> maven-javadoc-plugin:2.9.1:javadoc (default-cli) @ sphinx4-data >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0:enforce (enforce-maven) @ sphinx4-data ---
+[INFO] 
+[INFO] <<< maven-javadoc-plugin:2.9.1:javadoc (default-cli) @ sphinx4-data <<<
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.9.1:javadoc (default-cli) @ sphinx4-data ---
+[INFO] Skipping javadoc generation
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.792s
+[INFO] Finished at: Sun Apr 30 14:51:48 GMT 2017
+[INFO] Final Memory: 10M/153M
+[INFO] ------------------------------------------------------------------------

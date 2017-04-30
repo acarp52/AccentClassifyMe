@@ -1,0 +1,12 @@
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.dictionary.TextDictionary allocate
+INFO: Loading dictionary from: file:/mnt/c/Users/acarp/Documents/GitHub/AccentClassifyMe/cmusphinx-alignment-example/sphinx4/sphinx4-core/build/resources/test/edu/cmu/sphinx/linguist/language/ngram/large/100.dict
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.dictionary.TextDictionary allocate
+INFO: Loading filler dictionary from: jar:file:/mnt/c/Users/acarp/Documents/GitHub/AccentClassifyMe/cmusphinx-alignment-example/sphinx4/sphinx4-data/build/libs/sphinx4-data-5prealpha-SNAPSHOT.jar!/edu/cmu/sphinx/models/en-us/en-us/noisedict
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.language.ngram.large.LargeNGramModel allocate
+INFO: Loading n-gram language model from: file:/mnt/c/Users/acarp/Documents/GitHub/AccentClassifyMe/cmusphinx-alignment-example/sphinx4/sphinx4-core/build/resources/test/edu/cmu/sphinx/linguist/language/ngram/large/100.arpa.dmp
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.language.ngram.large.LargeNGramModel allocate
+INFO: 1-grams: 9
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.language.ngram.large.LargeNGramModel allocate
+INFO: 2-grams: 8
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.language.ngram.large.LargeNGramModel allocate
+INFO: 3-grams: 6

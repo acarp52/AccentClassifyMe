@@ -1,0 +1,4 @@
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.dictionary.TextDictionary allocate
+INFO: Loading dictionary from: file:/mnt/c/Users/acarp/Documents/GitHub/AccentClassifyMe/cmusphinx-alignment-example/sphinx4/sphinx4-core/build/resources/test/edu/cmu/sphinx/linguist/language/grammar/FSTGrammarTest.dic
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.dictionary.TextDictionary allocate
+INFO: Loading filler dictionary from: jar:file:/mnt/c/Users/acarp/Documents/GitHub/AccentClassifyMe/cmusphinx-alignment-example/sphinx4/sphinx4-data/build/libs/sphinx4-data-5prealpha-SNAPSHOT.jar!/edu/cmu/sphinx/models/en-us/en-us/noisedict

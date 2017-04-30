@@ -1,0 +1,9 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="edu.cmu.sphinx.linguist.acoustic.tiedstate.test.MixtureComponentTest" tests="3" failures="0" errors="0" timestamp="2017-04-30T13:46:14" hostname="DESKTOP-UVL8R14" time="0.001">
+  <properties/>
+  <testcase name="testClone" classname="edu.cmu.sphinx.linguist.acoustic.tiedstate.test.MixtureComponentTest" time="0.0"/>
+  <testcase name="testUnivariateDensity" classname="edu.cmu.sphinx.linguist.acoustic.tiedstate.test.MixtureComponentTest" time="0.0"/>
+  <testcase name="testUnivariateMeanTransformation" classname="edu.cmu.sphinx.linguist.acoustic.tiedstate.test.MixtureComponentTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

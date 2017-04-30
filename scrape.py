@@ -15,7 +15,7 @@ def scrape_soup(id_num):
     
     try:
         url = urllib.request.urlopen(urlstr).read()
-    except TimeoutError:
+    except:
         print("Connected party timed out. Trying again in 5 seconds...")
         time.sleep(5)
         try:
@@ -53,14 +53,14 @@ def scrape_soup(id_num):
     
     try:
         urlretrieve(audio['src'], "audio/" + speakerid + ".mp3")
-    except urllib.error.URLError:
+    except:
         print("Connected party had URL error while downloading audio. Trying again in 5 seconds...")
         time.sleep(5)
         try:
             urlretrieve(audio['src'], "audio/" + speakerid + ".mp3")
         except:
             print("Cound not connect to remote server to download audio.")
-            details['speakerid'][0] = "*"
+            details['speakerid'] = "*****"
 
     details.update(loc_to_coord(details['birth_place']))
 
@@ -90,12 +90,21 @@ def loc_to_coord(location_str):
                          "maxResults " : "1" }
 
     response = requests.get(geo_url, params=params).json()
-    coords = response['results'][0]['locations'][0]['latLng']
-    coords['birth_country'] = response['results'][0]['locations'][0]['adminArea1']
-    
+
+    try:
+        birth_country = response['results'][0]['locations'][0]['adminArea1']
+        if location_str.endswith("usa ") and birth_country == "US":
+            coords = response['results'][0]['locations'][0]['latLng']
+            coords['birth_country'] = birth_country
+        else:
+            coords = {}
+            coords['birth_country'] = '??'
+    except:
+        return {}
+
     return coords
 
-def insert_into_db(speaker_info, conn, cur):
+def insert_into_db(speaker_info, conn, cur, num):
     # print(speaker_info)
 
     columns = speaker_info.keys()
@@ -110,9 +119,106 @@ def insert_into_db(speaker_info, conn, cur):
         conn.commit()
     except:
         conn.rollback()
-        print("Problem inserting speaker #" + speaker_info['speakerid'])
+        print("Problem inserting speaker #" + str(num))
         print(insert_statement)
 
+def classify_region(lat, lng):
+    """
+    4 corners of each bounding box, in lat, long coordinates.
+    Regions are numbered, mapping to corresponding region code in postgres
+
+    New England - 1
+    41.15,-66.00
+    47.50,-73.50
+    41.15,-73.50
+    47.50,-66.00
+
+    Mid-Atlantic - 2
+    41.15,-71.65
+    36.50,-71.65
+    41.15,-78.88
+    36.50,-78.88
+
+    New York/Long Island - 3
+    40.30,-71.65
+    41.15,-74.57
+    40.30,-74.57
+    41.15,-71.65
+
+    Appalachia - 4
+    41.15,-78.88
+    36.50,-78.88
+    41.15,-84.92
+    36.50,-84.92
+
+    Lowland South - 5
+    24.60,-75.19
+    36.50,-84.92
+    24.60,-84.92
+    36.50,-75.19
+
+    Inland South - 6
+    25.90,-84.92
+    36.50,-103.0
+    25.90,-103.0
+    36.50,-84.92
+
+    Midlands - 7
+    36.50,-84.92
+    41.15,-103.0
+    36.50,-103.0
+    41.15,-84.92
+
+    Great Lakes - 8
+    41.15,-73.50
+    49.00,-88.95
+    41.15,-88.95
+    49.00,-73.50
+
+    Upper Midwest - 9
+    41.15,-88.95
+    50.00,-103.0
+    41.15,-103.0
+    50.00,-88.95
+
+    Western - 10
+    28.50,-103.0
+    49.50,-125.0
+    28.50,-125.0
+    49.50,-103.0
+
+    General - 0
+    <anything else>
+
+    """
+
+    #make sure lat/lng is in USA
+    if lat > 28.50 and lat < 50.00 and lng > -125.0 and lng < -66.0:
+        if lat > 41.15 and lat < 47.50 and lng > -73.50 and lng < -66.0:
+            return {'region':'New England', 'region_code':1}
+        elif lat > 36.50 and lat < 41.15 and lng > -78.88 and lng < -71.65:
+            # Odd case, since the New York area is contained within Mid-Atlantic. Might not work right.
+            if lat > 40.30 and lng > -74.57:
+                return {'region':'New York', 'region_code':3}
+            return {'region':'Mid-Atlantic', 'region_code':2}
+        elif lat > 36.50 and lat < 41.15 and lng > -84.92 and lng < -78.88:
+            return {'region':'Appalachia', 'region_code':4}
+        elif lat > 24.60 and lat < 36.50 and lng > -84.92 and lng < -75.19:
+            return {'region':'Lowland South', 'region_code':5}
+        elif lat > 25.90 and lat < 36.50 and lng > -103.0 and lng < -84.92:
+            return {'region':'Inland South', 'region_code':6}
+        elif lat > 36.50 and lat < 41.15 and lng > -103.0 and lng < -84.92:
+            return {'region':'Midlands', 'region_code':7}
+        elif lat > 41.15 and lat < 49.00 and lng > -88.95 and lng < -73.50:
+            return {'region':'Great Lakes', 'region_code':8}
+        elif lat > 41.15 and lat < 50.00 and lng > -103.0 and lng < -88.95:
+            return {'region':'Upper Midwest', 'region_code':9}
+        elif lng > -125.0 and lng < -103.0:
+            return {'region':'Western', 'region_code':10}
+        else:
+            return {'region':'General', 'region_code':0}
+    else:
+        return {'region':'Not USA', 'region_code':-1}
 
 def main():
 
@@ -142,26 +248,26 @@ def main():
                     "age decimal, age_of_english_onset decimal, lat decimal, lng decimal, "
                     "english_learning_method varchar, native_language varchar, other_languages varchar")
 
-    try:
-        cursor.execute("CREATE TABLE speaker_info (" + table_schema + ");")
-    except:
-        connection.rollback()
-        try:
-            cursor.execute("DROP TABLE speaker_info;")
-            cursor.execute("CREATE TABLE speaker_info (" + table_schema + ")")
-        except:
-            connection.rollback()
-            print("Problem interacting with database, halting execution.")
-            return
-    connection.commit()
+    # try:
+    #     cursor.execute("CREATE TABLE speaker_info (" + table_schema + ");")
+    # except:
+    #     connection.rollback()
+    #     try:
+    #         cursor.execute("DROP TABLE speaker_info;")
+    #         cursor.execute("CREATE TABLE speaker_info (" + table_schema + ")")
+    #     except:
+    #         connection.rollback()
+    #         print("Problem interacting with database, halting execution.")
+    #         return
+    # connection.commit()
 
-    for i in range(1, 2382):
+    for i in range(1, 672):
         new_speaker = scrape_soup(i)
-        insert_into_db(new_speaker, connection, cursor)
+        insert_into_db(new_speaker, connection, cursor, i)
         print("Finished with speaker #" + str(str(i).zfill(5)))
 
-    cursor.execute("SELECT * FROM speaker_info;")    
-    print(cursor.fetchone())
+    #cursor.execute("SELECT * FROM speaker_info;")    
+    #print(cursor.fetchone())
     cursor.close()
     connection.close()
 

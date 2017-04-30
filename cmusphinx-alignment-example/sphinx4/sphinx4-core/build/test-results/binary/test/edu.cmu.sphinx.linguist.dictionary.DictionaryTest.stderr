@@ -1,0 +1,20 @@
+Apr 30, 2017 1:45:46 PM edu.cmu.sphinx.linguist.dictionary.TextDictionary allocate
+INFO: Loading dictionary from: file:/mnt/c/Users/acarp/Documents/GitHub/AccentClassifyMe/cmusphinx-alignment-example/sphinx4/sphinx4-core/build/resources/test/edu/cmu/sphinx/linguist/dictionary/bad.dict
+Apr 30, 2017 1:45:46 PM edu.cmu.sphinx.linguist.dictionary.TextDictionary allocate
+INFO: Loading dictionary from: jar:file:/mnt/c/Users/acarp/Documents/GitHub/AccentClassifyMe/cmusphinx-alignment-example/sphinx4/sphinx4-data/build/libs/sphinx4-data-5prealpha-SNAPSHOT.jar!/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.dictionary.TextDictionary allocate
+INFO: Loading filler dictionary from: jar:file:/mnt/c/Users/acarp/Documents/GitHub/AccentClassifyMe/cmusphinx-alignment-example/sphinx4/sphinx4-data/build/libs/sphinx4-data-5prealpha-SNAPSHOT.jar!/edu/cmu/sphinx/models/en-us/en-us/noisedict
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.acoustic.UnitManager getUnit
+INFO: CI Unit: W
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.acoustic.UnitManager getUnit
+INFO: CI Unit: AH
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.acoustic.UnitManager getUnit
+INFO: CI Unit: N
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.acoustic.UnitManager getUnit
+INFO: CI Unit: HH
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.dictionary.TextDictionary getWord
+INFO: The dictionary is missing a phonetic transcription for the word 'something_missing'
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.acoustic.UnitManager getUnit
+INFO: CI Unit: *+NSN+
+Apr 30, 2017 1:45:47 PM edu.cmu.sphinx.linguist.acoustic.UnitManager getUnit
+INFO: CI Unit: *+SPN+

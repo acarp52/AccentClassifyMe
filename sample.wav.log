@@ -1,0 +1,52 @@
+-----------------------------------------------------------------------
+
+SPPAS - Version 1.8.5
+Copyright (C) 2011-2017 Brigitte Bigi
+Web site: http://www.sppas.org/
+Contact: Brigitte Bigi(brigite.bigi@gmail.com)
+
+-----------------------------------------------------------------------
+Date: 2017-04-30 11:48:01.468615
+Input languages: 
+  - Momel: 
+  - INTSINT: 
+  - IPUs Segmentation: 
+  - Tokenization: und
+  - Phonetization: und
+  - Alignment: und
+  - Syllabification: und
+  - Self-repetitions: und
+Input selection: 
+  - /mnt/c/Users/acarp/Documents/GitHub/AccentClassifyMe/sample.wav
+-----------------------------------------------------------------------
+  - Momel:  disabled
+  - INTSINT:  disabled
+  - IPUs Segmentation:  disabled
+  - Tokenization:  disabled
+  - Phonetization:  disabled
+  - Alignment:  disabled
+  - Syllabification:  disabled
+  - Self-repetitions:  disabled
+-----------------------------------------------------------------------
+
+Extension: .xra
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+ ... Merge outputs /mnt/c/Users/acarp/Documents/GitHub/AccentClassifyMe/sample.wav
+ ...  ... [ IGNORED ] 
+
+-----------------------------------------------------------------------
+Result statistics:
+-----------------------------------------------------------------------
+  - Momel:  -1
+  - INTSINT:  -1
+  - IPUs Segmentation:  -1
+  - Tokenization:  -1
+  - Phonetization:  -1
+  - Alignment:  -1
+  - Syllabification:  -1
+  - Self-repetitions:  -1
+-----------------------------------------------------------------------

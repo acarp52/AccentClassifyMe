@@ -1,0 +1,38 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" tests="32" failures="0" errors="0" timestamp="2017-04-30T13:46:22" hostname="DESKTOP-UVL8R14" time="0.263">
+  <properties/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.015"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.005"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.001"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.001"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.001"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.011"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.001"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.001"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.001"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.001"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.001"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.001"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.001"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.001"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.001"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.001"/>
+  <testcase name="textToWords" classname="edu.cmu.sphinx.alignment.UsEnglishWordExpanderTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

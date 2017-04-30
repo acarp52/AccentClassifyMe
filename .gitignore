@@ -1,2 +1,8 @@
 audio/
-*.mp3
+audio_wav/
+montreal-forced-aligner/
+SPPAS/
+__pycache__/
+*.class
+cmusphinx-alignment-example/*.class
+*.tar.gz

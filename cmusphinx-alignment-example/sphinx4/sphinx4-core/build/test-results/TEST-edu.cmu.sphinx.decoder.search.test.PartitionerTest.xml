@@ -1,0 +1,8 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="edu.cmu.sphinx.decoder.search.test.PartitionerTest" tests="2" failures="0" errors="0" timestamp="2017-04-30T13:46:21" hostname="DESKTOP-UVL8R14" time="0.061">
+  <properties/>
+  <testcase name="testPartitionOrders" classname="edu.cmu.sphinx.decoder.search.test.PartitionerTest" time="0.048"/>
+  <testcase name="testPartitionSizes" classname="edu.cmu.sphinx.decoder.search.test.PartitionerTest" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

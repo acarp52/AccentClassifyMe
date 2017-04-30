@@ -1,6 +1,10 @@
 # AccentClassifyMe
 General classificatier for English language accents
 
+converting mp3 to wav:
+ffmpeg -i audio/00003.mp3 -ac 1 -ar 16000 00003.wav
+
+
 Running CMU Sphinx:
 
 cd cmusphinx-alignment-example

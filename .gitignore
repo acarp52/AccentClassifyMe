@@ -2,7 +2,9 @@ audio/
 audio_wav/
 montreal-forced-aligner/
 SPPAS/
-__pycache__/
+*__pycache__/
 *.class
 cmusphinx-alignment-example/*.class
 *.tar.gz
+*.wav
+*.mp3

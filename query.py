@@ -104,7 +104,7 @@ def classify_region(lat, lng):
         return ['Not USA', -1]
 
 
-def main():
+def potgres_query():
 
     connection = psycopg2.connect("dbname=accentclassify user=accent password=classify")
     cursor = connection.cursor()
@@ -122,13 +122,20 @@ def main():
     cursor.close()
     connection.close()
 
-    speakerids = np.asarray(speaker_results)[:,0]
-    s_file = open('speakerids.txt', 'w')
-    for speakerid in speakerids:
-        s_file.write("%s\n" % speakerid)
+    return speaker_results
 
-    # print(speaker_results[:,1])
+
+def main():
+
+    speaker_results = potgres_query()
+
+    speakerids = np.asarray(speaker_results)[:,0]
+    # s_file = open('speakerids.txt', 'w')
+    # for speakerid in speakerids:
+    #     s_file.write("%s\n" % speakerid)
+
+    print(np.asarray(speaker_results))
     # convert_audio(np.asarray(speaker_results)[:,0])
 
 
-main()
+# main()

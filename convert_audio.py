@@ -1,6 +1,7 @@
 import subprocess
 import os.path
 import re
+import numpy as np
 
 """
 Must be run in an environment where ffmpeg is installed.
@@ -14,13 +15,27 @@ def convert_audio(speakerid):
         print("Running command:", shell_cmd)
         process = subprocess.Popen(shell_cmd.split(), stdout=subprocess.DEVNULL)
 
+
+def parse_word_boundaries(speakerid, sphinx_out):
+
+    pattern = r'\"(.+?)\"'
+
+    speaker_word_boundaries = [speakerid]
+
+    for line in sphinx_out.decode().split('\n'):
+        # print(line)
+        matches = re.findall(pattern, line)
+        if len(matches) > 0:
+            # word_times = [matches[0], int(matches[4]), int(matches[5])]
+            # print(word_times)
+            speaker_word_boundaries.append(matches[0])
+            speaker_word_boundaries.append(int(matches[4]))
+            speaker_word_boundaries.append(int(matches[5]))
+
+    return speaker_word_boundaries
+
+
 def main():
-
-    s_file = open('speakerids.txt', 'r')
-    for speakerid in s_file:
-        
-        convert_audio(speakerid.strip())
-
 
     try:
         from subprocess import DEVNULL # py3k
@@ -28,19 +43,25 @@ def main():
         import os
         DEVNULL = open(os.devnull, 'wb')
 
-    shell_cmd = "cmusphinx-alignment-example/align.sh audio_wav/00061.wav transcript.txt"
-    process = subprocess.Popen(shell_cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    output, error = process.communicate()
-    # sphinx_out = open('sphinx_out.txt', 'w')
-    # sphinx_out.write(output.decode())
-    # sphinx_out.close()
-    pattern = r'\"(.+?)\"'
 
-    for line in output.decode().split('\n'):
-        # print(line)
-        matches = re.findall(pattern, line)
-        if len(matches) > 0:
-            print(matches)
-    # print(output.decode())
+    s_file = open('speakerids.txt', 'r')
 
+    word_boundaries = []
+
+    for speakerid in s_file:
+        
+        s_id = speakerid.strip()
+        convert_audio(s_id)
+
+        shell_cmd = "cmusphinx-alignment-example/align.sh audio_wav/%s.wav transcript.txt" % s_id
+        process = subprocess.Popen(shell_cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        output, error = process.communicate()
+    
+        word_boundaries.append(parse_word_boundaries(s_id, output))
+        print("Speaker %s aligned." % s_id)
+
+    out_arr = np.asarray(word_boundaries)
+    # print(out_arr)
+    with open('word_boundaries.csv','wb') as f:
+        np.savetxt("word_boundaries.csv", out_arr, delimiter=",", fmt='%s')
 main()
